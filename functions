@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cert_issuer() {
+	local server=${1:?};
+	openssl s_client -showcerts -servername $server -connect $server:443 \
+	</dev/null 2>/dev/null | \
+	openssl x509 -inform pem -noout -issuer -nameopt multiline;
+}
+
+ldap() {
+	if [ ! -z $1 ]; then
+		echo "Searching for user $1 on '<LDAPSERVER>'..."
+		ldapsearch -b 'dc=<COMPANY>' -h '<LDAPSERVER>' -D tim.olson@<COMPANY>.com -W samaaccountname="$1"
+	else
+		echo "Couldn't find or something wrong with name... (ex <tim.olson>)"
+	fi
+}

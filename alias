@@ -1,0 +1,16 @@
+# SSH Stuff
+alias sshc='cat ~/.ssh/config'
+
+# Python 3
+alias python='python3'
+alias pip='pip3'
+alias ipython='ipython3'
+
+# Url stuff
+alias urldecode='python3 -c "import sys, urllib.parse; print(urllib.parse.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse; print(urllib.parse.quote_plus(sys.argv[1]))"'
+
+# Docker
+alias dpsn='docker ps --format "{{.Names}}"'
+alias dwatch="watch -n 0 'docker ps --format \"table {{.ID}}\t{{.Command}}\t\t{{.Status}}\t{{.Ports}}\t{{.Names}}\"'"
+alias burnitdown="docker ps -a -q | xargs docker stop | xargs docker rm"

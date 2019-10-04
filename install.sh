@@ -1,1 +1,41 @@
-ln -s ./zshrc ~/.zshrc
+#!/bin/bash
+
+# Neat 
+DOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+OS=`uname`
+
+# Not sure if sym links are the best thing to do here...
+
+ln -s $DOT_DIR/zshrc $HOME/.zshrc
+ln -s $DOT_DIR/zshenv $HOME/.zshenv
+ln -s $DOT_DIR/vimrc $HOME/.vimrc
+ln -s $DOT_DIR/psqlrc $HOME/.psqlrc
+ln -s $DOT_DIR/tmux.conf $HOME/.tmux.conf
+
+# Dracula
+
+OH_MY_ZSH=$HOME/.oh-my-zsh
+
+if [[ -d $OH_MY_ZSH ]]; then
+    ln -s $DOT_DIR/zsh-theme/dracula.zsh-theme $OH_MY_ZSH/themes/dracula.zsh-theme
+else
+    echo "Couldn't find [$OH_MY_ZSH], go install https://github.com/robbyrussell/oh-my-zsh - sorry..."
+fi
+
+# Setup plug
+
+VIM_AUTOLOAD=$HOME/.vim/autoload
+
+mkdir -p $VIM_AUTOLOAD
+cp $DOT_DIR/utils/plug.vim $VIM_AUTOLOAD
+
+# Fonts
+
+FONT=SourceCodePro+Powerline+Awesome+Regular.ttf
+FONT_LOC=$DOT_DIR/fonts/$FONT
+
+if [[ $OS == "Linux" ]]; then
+    cp $FONT_LOC $HOME/.local/share/fonts
+else
+    open $FONT_LOC 
+fi
