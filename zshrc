@@ -4,8 +4,17 @@
 . ~/dotfiles/alias
 . ~/dotfiles/functions
 
+# Used for work dotfiles - or anything extra.
+EXTRA_DOT_FILES=$HOME/extra-dotfiles
+
+if [[ -d $EXTRA_DOT_FILES ]]; then
+    . $EXTRA_DOT_FILES/zshenv
+    . $EXTRA_DOT_FILES/alias
+    . $EXTRA_DOT_FILES/functions
+fi
+
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tolson/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
