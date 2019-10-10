@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-. ~/dotfiles/alias
-. ~/dotfiles/functions
+DOT_FILES=$HOME/dotfiles
+
+. $DOT_FILES/alias
+. $DOT_FILES/functions
 
 # Used for work dotfiles - or anything extra.
 EXTRA_DOT_FILES=$HOME/extra-dotfiles
@@ -83,3 +85,15 @@ source $ZSH/oh-my-zsh.sh
 if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
 fi
+
+# Gruvbox uses a special pallete to get these nice depressing flat colors, activate it!
+if [[ -n $TERM_PROFILE && $TERM_PROFILE == 'gruvbox' ]]; then
+    UNAME=`uname`
+    if [[ $UNAME == 'Linux' ]]; then
+        . $DOT_FILES/term-colors/gruvbox/gruvbox_256palette.sh
+    fi
+    if [[ $UNAME == 'Darwin' ]]; then
+        . $DOT_FILES/term-colors/gruvbox/gruvbox_256palette_osx.sh
+    fi
+fi
+
