@@ -98,3 +98,6 @@ if [[ -n $TERM_PROFILE && $TERM_PROFILE == 'gruvbox' ]]; then
     fi
 fi
 
+if [[ $UNAME == 'Linux' ]]; then
+    bindkey '\e/' history-incremental-pattern-search-backward
+fi

@@ -12,5 +12,5 @@ alias urlencode='python3 -c "import sys, urllib.parse; print(urllib.parse.quote_
 
 # Docker
 alias dpsn='docker ps --format "{{.Names}}"'
-alias dwatch="watch -n 0 'docker ps --format \"table {{.ID}}\t{{.Command}}\t\t{{.Status}}\t{{.Ports}}\t{{.Names}}\"'"
+alias dockerw="watch -n 0 'docker ps --format \"table {{.ID}}\t{{.Command}}\t\t{{.Status}}\t{{.Ports}}\t{{.Names}}\"'"
 alias burnitdown="docker ps -a -q | xargs docker stop | xargs docker rm"
