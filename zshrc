@@ -89,7 +89,6 @@ fi
 
 # Gruvbox uses a special pallete to get these nice depressing flat colors, activate it!
 if [[ -n $TERM_PROFILE && $TERM_PROFILE == 'gruvbox' ]]; then
-    UNAME=`uname`
     if [[ $UNAME == 'Linux' ]]; then
         . $DOT_FILES/term-colors/gruvbox/gruvbox_256palette.sh
     fi
