@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/tin:$HOME
+export PATH=$PATH:$HOME/tin:$HOME:$HOME/.cargo/bin
 export EDITOR=vim
 export ZSH=$HOME/.oh-my-zsh
 export SHELL=zsh
