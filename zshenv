@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/tin:$HOME:$HOME/.cargo/bin
+export PATH=$HOME/tin:$PATH:$HOME:$HOME/.cargo/bin:$HOME/google-cloud-sdk/bin
 export EDITOR=vim
 export ZSH=$HOME/.oh-my-zsh
 export SHELL=zsh
