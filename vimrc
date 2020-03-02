@@ -36,6 +36,8 @@ set list
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set listchars=eol:¬,trail:·,tab:>-,trail:~,extends:>,precedes:<
 
+set backspace=indent,eol,start
+
 " Show all space characters
 " set lcs+=space:·
 
@@ -95,6 +97,7 @@ if has("autocmd")
 
   autocmd User Rails let  g:fuzzy_roots = [rails#app().path()]
   au BufRead,BufNewFile {*.txt}                              set ft=txt
+  au BufRead,BufNewFile {*.yml,*.yaml,*.kubeconfig}          set ft=yaml
   au BufRead,BufNewFile {*.rake,*.ruby,config.ru}            set ft=ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,Guardfile} set ft=ruby
   au BufRead,BufNewFile {*.rss,*.atom}                       set ft=xml
@@ -125,9 +128,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
+Plug 'valloric/youcompleteme'
 Plug 'leafgarland/typescript-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
+"Plug 'inkarkat/vim-spellcheck'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
