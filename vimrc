@@ -36,6 +36,8 @@ set list
 "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set listchars=eol:¬,trail:·,tab:>-,trail:~,extends:>,precedes:<
 
+set backspace=indent,eol,start
+
 " Show all space characters
 " set lcs+=space:·
 
@@ -126,9 +128,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
+Plug 'valloric/youcompleteme'
 Plug 'leafgarland/typescript-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'morhetz/gruvbox'
+"Plug 'inkarkat/vim-spellcheck'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
