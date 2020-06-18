@@ -95,6 +95,7 @@ if has("autocmd")
 
   autocmd User Rails let  g:fuzzy_roots = [rails#app().path()]
   au BufRead,BufNewFile {*.txt}                              set ft=txt
+  au BufRead,BufNewFile {*.yml,*.yaml,*.kubeconfig}          set ft=yaml
   au BufRead,BufNewFile {*.rake,*.ruby,config.ru}            set ft=ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,Guardfile} set ft=ruby
   au BufRead,BufNewFile {*.rss,*.atom}                       set ft=xml
@@ -143,3 +144,6 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
+
+" YCM config
+let g:ycm_enable_diagnostic_signs=0
