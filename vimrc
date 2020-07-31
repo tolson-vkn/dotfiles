@@ -11,9 +11,6 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-" Mac's suck
-" inoremap jj <Esc>
-
 syntax on
 
 set autoindent
@@ -21,18 +18,23 @@ set ruler
 " set cmdheight=2
 set number relativenumber
 
-" Copy Paste
+" g maps!
 map gc :w !pbcopy<CR><CR>
 map gp :r !pbpaste<CR>
+"
+" Relative or absolute number lines
+function! NumberToggle()
+    if(&rnu == 1)
+        set nu
+        set nornu
+    else
+        set nonu
+        set nu
+        set rnu
+    endif
+endfunction
 
-" This is great but it's super flashy on the screen...
-"if has("autocmd")
-"  augroup numbertoggle
-"    autocmd!
-"    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-"    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-"  augroup END
-"endif
+map gn :call NumberToggle()<CR>
 
 " Pretty characters - this is a little noisy at times...
 set list
