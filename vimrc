@@ -21,6 +21,10 @@ set ruler
 " set cmdheight=2
 set number relativenumber
 
+" Copy Paste
+map gc :w !pbcopy<CR><CR>
+map gp :r !pbpaste<CR>
+
 " This is great but it's super flashy on the screen...
 "if has("autocmd")
 "  augroup numbertoggle

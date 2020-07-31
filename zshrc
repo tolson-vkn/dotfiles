@@ -100,3 +100,9 @@ fi
 if [[ $UNAME == 'Linux' ]]; then
     bindkey '\e/' history-incremental-pattern-search-backward
 fi
+
+# added by Nix installer
+if [ -e /home/tolson/.nix-profile/etc/profile.d/nix.sh ]; then
+    . /home/tolson/.nix-profile/etc/profile.d/nix.sh
+fi
+
