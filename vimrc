@@ -35,6 +35,7 @@ function! NumberToggle()
 endfunction
 
 map gn :call NumberToggle()<CR>
+map gN :set nornu nonu<CR>
 
 " Pretty characters - this is a little noisy at times...
 set list
