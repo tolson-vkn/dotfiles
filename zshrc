@@ -106,3 +106,7 @@ if [ -e /home/tolson/.nix-profile/etc/profile.d/nix.sh ]; then
     . /home/tolson/.nix-profile/etc/profile.d/nix.sh
 fi
 
+eval "$(starship init zsh)"
+
+eval "$(pyenv init -)"
+
