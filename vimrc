@@ -18,9 +18,18 @@ set ruler
 " set cmdheight=2
 set number relativenumber
 
+inoremap jk <Esc>
+
 " g maps!
-map gc :w !pbcopy<CR><CR>
-map gp :r !pbpaste<CR>
+map gc "+y
+map gp "+gP
+" with gvim installed:
+" Cut - "+x
+" Copy - "+y
+" Paste - "+gP
+" Put before - [p
+" Put after - ]p
+
 "
 " Relative or absolute number lines
 function! NumberToggle()

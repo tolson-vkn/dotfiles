@@ -106,3 +106,5 @@ if [ -e /home/tolson/.nix-profile/etc/profile.d/nix.sh ]; then
     . /home/tolson/.nix-profile/etc/profile.d/nix.sh
 fi
 
+# Probably need to clean this up because I just use starship now...
+eval "$(starship init zsh)"
