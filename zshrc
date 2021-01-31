@@ -108,3 +108,4 @@ fi
 
 # Probably need to clean this up because I just use starship now...
 eval "$(starship init zsh)"
+eval "$(pyenv init -)"

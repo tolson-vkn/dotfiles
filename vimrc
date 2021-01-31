@@ -11,6 +11,8 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+inoremap jk <Esc>
+
 syntax on
 
 set autoindent
