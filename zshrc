@@ -15,66 +15,6 @@ if [[ -d $EXTRA_DOT_FILES ]]; then
     . $EXTRA_DOT_FILES/functions
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="dracula"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
   vi-mode
@@ -87,25 +27,16 @@ if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
 fi
 
-# Gruvbox uses a special pallete to get these nice depressing flat colors, activate it!
-if [[ -n $TERM_PROFILE && $TERM_PROFILE == 'gruvbox' ]]; then
-    if [[ $UNAME == 'Linux' ]]; then
-        . $DOT_FILES/term-colors/gruvbox/gruvbox_256palette.sh
-    fi
-    if [[ $UNAME == 'Darwin' ]]; then
-        . $DOT_FILES/term-colors/gruvbox/gruvbox_256palette_osx.sh
-    fi
+if [ $commands[sps-cli] ]; then
+    source <(sps-cli completion zsh)
 fi
 
-if [[ $UNAME == 'Linux' ]]; then
-    bindkey '\e/' history-incremental-pattern-search-backward
-fi
+# Correct colors
+. $DOT_FILES/term-colors/gruvbox/gruvbox_256palette.sh
 
-# added by Nix installer
-if [ -e /home/tolson/.nix-profile/etc/profile.d/nix.sh ]; then
-    . /home/tolson/.nix-profile/etc/profile.d/nix.sh
-fi
+bindkey '\e/' history-incremental-pattern-search-backward
 
-# Probably need to clean this up because I just use starship now...
+unsetopt BEEP
+
 eval "$(starship init zsh)"
 eval "$(pyenv init -)"
