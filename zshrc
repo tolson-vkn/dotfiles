@@ -7,7 +7,7 @@ DOT_FILES=$HOME/dotfiles
 . $DOT_FILES/functions
 
 # Used for work dotfiles - or anything extra.
-EXTRA_DOT_FILES=$HOME/extra-dotfiles
+EXTRA_DOT_FILES=$HOME/.env-specif-dots
 
 if [[ -d $EXTRA_DOT_FILES ]]; then
     . $EXTRA_DOT_FILES/zshenv
@@ -25,10 +25,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
-fi
-
-if [ $commands[sps-cli] ]; then
-    source <(sps-cli completion zsh)
 fi
 
 # Correct colors

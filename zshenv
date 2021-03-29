@@ -4,5 +4,4 @@ export EDITOR=vim
 export ZSH=$HOME/.oh-my-zsh
 export SHELL=zsh
 export TERM_PROFILE=gruvbox
-export UNAME=`uname`
 export PYTHONDONTWRITEBYTECODE=1 # *.pyc files are ugly. 
