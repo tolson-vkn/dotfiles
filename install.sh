@@ -39,3 +39,10 @@ if [[ $OS == "Linux" ]]; then
 else
     open $FONT_LOC 
 fi
+
+# Ipython
+IPYCONFIG=$DOT_DIR/ipython/.ipython/profile_default/ipython_config.py
+if [[ -e $IPYCONFIG ]]; then
+    ipython profile create
+fi 
+ln -s $IPYCONFIG $HOME/.ipython/profile_default/ipython_config.py
