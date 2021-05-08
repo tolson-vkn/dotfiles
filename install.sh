@@ -11,6 +11,7 @@ ln -s $DOT_DIR/zshenv $HOME/.zshenv
 ln -s $DOT_DIR/vimrc $HOME/.vimrc
 ln -s $DOT_DIR/psqlrc $HOME/.psqlrc
 ln -s $DOT_DIR/tmux.conf $HOME/.tmux.conf
+ln -s $DOT_DIR/starship.toml $HOME/.config/starship.toml
 
 # Dracula
 
@@ -46,3 +47,7 @@ if [[ -e $IPYCONFIG ]]; then
     ipython profile create
 fi 
 ln -s $IPYCONFIG $HOME/.ipython/profile_default/ipython_config.py
+
+# Bins
+mkdir -p $HOME/tin
+cp -r $DOT_DIR/bin/* $HOME/tin
