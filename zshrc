@@ -27,6 +27,9 @@ if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Correct colors
 . $DOT_FILES/term-colors/gruvbox/gruvbox_256palette.sh
 
