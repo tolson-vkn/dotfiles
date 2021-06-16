@@ -3,6 +3,7 @@
 
 DOT_FILES=$HOME/dotfiles
 
+. $DOT_FILES/zshenv
 . $DOT_FILES/alias
 . $DOT_FILES/functions
 
@@ -38,4 +39,3 @@ bindkey '\e/' history-incremental-pattern-search-backward
 unsetopt BEEP
 
 eval "$(starship init zsh)"
-eval "$(pyenv init -)"
