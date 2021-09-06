@@ -273,62 +273,62 @@ font:
   #  text: CellBackground
   #  background: CellForeground
 
-  # Gruvbox dark
-  colors:
-    # Default colors
-    primary:
-      background: '0x282828'
-      foreground: '0xe6d4a3'
+# Gruvbox dark
+colors:
+  # Default colors
+  primary:
+    background: '0x282828'
+    foreground: '0xe6d4a3'
 
-    # Normal colors
-    normal:
-      black:   '0x1e1e1e'
-      red:     '0xbe0f17'
-      green:   '0x868715'
-      yellow:  '0xcc881a'
-      blue:    '0x377375'
-      magenta: '0xa04b73'
-      cyan:    '0x578e57'
-      white:   '0x978771'
+  # Normal colors
+  normal:
+    black:   '0x1e1e1e'
+    red:     '0xbe0f17'
+    green:   '0x868715'
+    yellow:  '0xcc881a'
+    blue:    '0x377375'
+    magenta: '0xa04b73'
+    cyan:    '0x578e57'
+    white:   '0x978771'
 
-    # Bright colors
-    bright:
-      black:   '0x7f7061'
-      red:     '0xf73028'
-      green:   '0xaab01e'
-      yellow:  '0xf7b125'
-      blue:    '0x719586'
-      magenta: '0xc77089'
-      cyan:    '0x7db669'
-      white:   '0xe6d4a3'
-  # Gruvbox light
-  #   # Default colors
-  #   primary:
-  #     background: '0x282828'
-  #     foreground: '0xe6d4a3'
-
-  #   # Normal colors
-  #   normal:
-  #     black:   '0x1e1e1e'
-  #     red:     '0xbe0f17'
-  #     green:   '0x868715'
-  #     yellow:  '0xcc881a'
-  #     blue:    '0x377375'
-  #     magenta: '0xa04b73'
-  #     cyan:    '0x578e57'
-  #     white:   '0x978771'
-
-  #   # Bright colors
-  #   bright:
-  #     black:   '0x7f7061'
-  #     red:     '0xf73028'
-  #     green:   '0xaab01e'
-  #     yellow:  '0xf7b125'
-  #     blue:    '0x719586'
-  #     magenta: '0xc77089'
-  #     cyan:    '0x7db669'
-  #     white:   '0xe6d4a3'
-
+  # Bright colors
+  bright:
+    black:   '0x7f7061'
+    red:     '0xf73028'
+    green:   '0xaab01e'
+    yellow:  '0xf7b125'
+    blue:    '0x719586'
+    magenta: '0xc77089'
+    cyan:    '0x7db669'
+    white:   '0xe6d4a3'
+# Gruvbox light
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0xfaefbb'
+#    foreground: '0x2e2a29'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0xfaefbb'
+#    red:     '0xbe0f17'
+#    green:   '0x868715'
+#    yellow:  '0xcc881a'
+#    blue:    '0x377375'
+#    magenta: '0xa04b73'
+#    cyan:    '0x578e57'
+#    white:   '0x685c51'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x7f7061'
+#    red:     '0x890009'
+#    green:   '0x66620d'
+#    yellow:  '0xa56311'
+#    blue:    '0x0e5365'
+#    magenta: '0x7b2b5e'
+#    cyan:    '0x356a46'
+#    white:   '0x2e2a29'
 
   # Dim colors
   #
