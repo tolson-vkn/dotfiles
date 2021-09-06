@@ -31,15 +31,15 @@ mkdir -p $VIM_AUTOLOAD
 cp $DOT_DIR/utils/plug.vim $VIM_AUTOLOAD
 
 # Fonts
+FONT_LOC=$DOT_DIR/fonts
 
-FONT=SourceCodePro+Powerline+Awesome+Regular.ttf
-FONT_LOC=$DOT_DIR/fonts/$FONT
+for font in "$(ls $FONT_LOC)"; do
+    cp $FONT_LOC/$font $HOME/.local/share/fonts
+done
 
-if [[ $OS == "Linux" ]]; then
-    cp $FONT_LOC $HOME/.local/share/fonts
-else
-    open $FONT_LOC 
-fi
+# Term
+mkdir -p $HOME/.config/alacritty/
+ln -s $DOT_DIR/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 # Ipython
 IPYCONFIG=$DOT_DIR/ipython/.ipython/profile_default/ipython_config.py
