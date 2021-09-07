@@ -33,7 +33,7 @@ cp $DOT_DIR/utils/plug.vim $VIM_AUTOLOAD
 # Fonts
 FONT_LOC=$DOT_DIR/fonts
 
-for font in "$(ls $FONT_LOC)"; do
+for font in $(ls $FONT_LOC); do
     cp $FONT_LOC/$font $HOME/.local/share/fonts
 done
 
