@@ -8,5 +8,4 @@ export PYTHONDONTWRITEBYTECODE=1 # *.pyc files are ugly.
 export AWS_PAGER=""
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/.pyenv/shims:$PATH"
