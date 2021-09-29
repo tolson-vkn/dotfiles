@@ -6,13 +6,14 @@ packages=(
     'i3lock'
     'scrot'
     'dmenu'
-
+    # 'wired' # ope city
+    'playerctl'
 )
 
 not_installed=()
 
 for package in "${packages[@]}"; do
-    pacman -Qe | grep $package > /dev/null 2>&1
+    yay -Qe | grep $package > /dev/null 2>&1
     if [[ "$?" != "0" ]]; then
         echo $package not installed.
         not_installed+=($package)
@@ -20,7 +21,7 @@ for package in "${packages[@]}"; do
 done
 
 if [[ ${#not_installed[@]} -gt 0 ]]; then
-    sudo pacman -S ${not_installed[@]}
+    yay -S ${not_installed[@]}
 fi
 
 CONFIG_DIR=$HOME/.config

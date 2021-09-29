@@ -1,6 +1,20 @@
 theme = "gruvbox-dark"
 icons = "awesome5"
 
+# [[block]]
+# block = "custom"
+# cycle = ["echo ON", "echo OFF"]
+# on_click = "<command>"
+# interval = 1
+
+[[block]]
+block = "music"
+player = "spotify"
+
+[[block]]
+block = "github"
+format = "{author}|{comment}|{mention}|{review_requested}"
+
 [[block]]
 block = "disk_space"
 path = "/"
@@ -28,6 +42,11 @@ format = "{1m}"
 
 [[block]]
 block = "sound"
+
+[[block]]
+block = "battery"
+interval = 10
+format = " {percentage}"
 
 [[block]]
 block = "time"
