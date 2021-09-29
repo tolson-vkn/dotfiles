@@ -13,16 +13,6 @@ ln -s $DOT_DIR/psqlrc $HOME/.psqlrc
 ln -s $DOT_DIR/tmux.conf $HOME/.tmux.conf
 ln -s $DOT_DIR/starship.toml $HOME/.config/starship.toml
 
-# Dracula
-
-OH_MY_ZSH=$HOME/.oh-my-zsh
-
-if [[ -d $OH_MY_ZSH ]]; then
-    ln -s $DOT_DIR/zsh-theme/dracula.zsh-theme $OH_MY_ZSH/themes/dracula.zsh-theme
-else
-    echo "Couldn't find [$OH_MY_ZSH], go install https://github.com/robbyrussell/oh-my-zsh - sorry..."
-fi
-
 # Setup plug
 
 VIM_AUTOLOAD=$HOME/.vim/autoload
