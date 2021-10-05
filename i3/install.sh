@@ -35,3 +35,7 @@ cp -r i3status-rust/ $CONFIG_DIR
 
 cp lock.sh $HOME/tin
 cp Xresources $HOME/.Xresources
+
+xrdb ~/.Xresources 
+i3-msg reload
+i3-msg restart
