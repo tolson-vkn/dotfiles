@@ -2,7 +2,9 @@
 ! Xft.dpi: 260
 ! 4K monitor
 ! Xft.dpi: 135
-Xft.dpi: 115
+! Xft.dpi: 115
+! X1 Yoga
+Xft.dpi: 96
 
 ! xrdb ~/.Xresources
 

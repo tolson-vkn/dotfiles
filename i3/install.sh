@@ -8,6 +8,8 @@ packages=(
     'dmenu'
     # 'wired' # ope city
     'playerctl'
+    'ttf-font-awesome'
+    'xorg-xrandr'
 )
 
 not_installed=()

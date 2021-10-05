@@ -13,6 +13,31 @@ ln -s $DOT_DIR/psqlrc $HOME/.psqlrc
 ln -s $DOT_DIR/tmux.conf $HOME/.tmux.conf
 ln -s $DOT_DIR/starship.toml $HOME/.config/starship.toml
 
+
+if ! which yay > /dev/null 2>&1; then
+  echo "Go install yay: https://github.com/Jguer/yay"
+  exit 1
+fi
+
+# Packages
+packages=(
+    'vim-youcompleteme-git'
+)
+
+not_installed=()
+
+for package in "${packages[@]}"; do
+    yay -Qe | grep $package > /dev/null 2>&1
+    if [[ "$?" != "0" ]]; then
+        echo $package not installed.
+        not_installed+=($package)
+    fi
+done
+
+if [[ ${#not_installed[@]} -gt 0 ]]; then
+    yay -S ${not_installed[@]}
+fi
+
 # Setup plug
 
 VIM_AUTOLOAD=$HOME/.vim/autoload
