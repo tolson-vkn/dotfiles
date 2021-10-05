@@ -4,6 +4,31 @@
 DOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 OS=`uname`
 
+# Intention is to set a global hardware config. I for example don't care about
+# auto rotation on my desktop but would my 2in1 X1 Yoga
+PS3='Choose the hardware: '
+hardware=("Desktop" "X1 Yoga" "Precision 5540" "Quit/Abort")
+select fav in "${hardware[@]}"; do
+    case $fav in
+        "Desktop")
+            echo "desktop" > ~/.config/tolson-hardware
+            break
+            ;;
+        "X1 Yoga")
+            echo "x1yoga" > ~/.config/tolson-hardware
+            break
+            ;;
+        "Precision 5540")
+            echo "p5540" > ~/.config/tolson-hardware
+            break
+            ;;
+    "Quit")
+        exit
+        ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
+
 # Not sure if sym links are the best thing to do here...
 
 ln -s $DOT_DIR/zshrc $HOME/.zshrc
@@ -12,7 +37,6 @@ ln -s $DOT_DIR/vimrc $HOME/.vimrc
 ln -s $DOT_DIR/psqlrc $HOME/.psqlrc
 ln -s $DOT_DIR/tmux.conf $HOME/.tmux.conf
 ln -s $DOT_DIR/starship.toml $HOME/.config/starship.toml
-
 
 if ! which yay > /dev/null 2>&1; then
   echo "Go install yay: https://github.com/Jguer/yay"

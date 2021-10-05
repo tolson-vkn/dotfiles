@@ -232,3 +232,6 @@ bindsym $mod+Shift+x exec $HOME/tin/lock.sh
 # move focused workspace between monitors
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
+
+# Not ideal, need to figure out when shift alt q would close pulsemixer, delete workspace, move me back, moving back with nothing else in worskapce should fix that for me..
+bindsym $mod+m exec --no-startup-id i3-msg 'workspace Audio'; exec --no-startup-id alacritty -e pulsemixer
