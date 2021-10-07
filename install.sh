@@ -4,6 +4,31 @@
 DOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 OS=`uname`
 
+# Intention is to set a global hardware config. I for example don't care about
+# auto rotation on my desktop but would my 2in1 X1 Yoga
+PS3='Choose the hardware: '
+hardware=("Desktop" "X1 Yoga" "Precision 5540" "Quit/Abort")
+select fav in "${hardware[@]}"; do
+    case $fav in
+        "Desktop")
+            echo "desktop" > ~/.config/tolson-hardware
+            break
+            ;;
+        "X1 Yoga")
+            echo "x1yoga" > ~/.config/tolson-hardware
+            break
+            ;;
+        "Precision 5540")
+            echo "p5540" > ~/.config/tolson-hardware
+            break
+            ;;
+    "Quit")
+        exit
+        ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
+
 # Not sure if sym links are the best thing to do here...
 
 ln -s $DOT_DIR/zshrc $HOME/.zshrc
@@ -13,14 +38,28 @@ ln -s $DOT_DIR/psqlrc $HOME/.psqlrc
 ln -s $DOT_DIR/tmux.conf $HOME/.tmux.conf
 ln -s $DOT_DIR/starship.toml $HOME/.config/starship.toml
 
-# Dracula
+if ! which yay > /dev/null 2>&1; then
+  echo "Go install yay: https://github.com/Jguer/yay"
+  exit 1
+fi
 
-OH_MY_ZSH=$HOME/.oh-my-zsh
+# Packages
+packages=(
+    'vim-youcompleteme-git'
+)
 
-if [[ -d $OH_MY_ZSH ]]; then
-    ln -s $DOT_DIR/zsh-theme/dracula.zsh-theme $OH_MY_ZSH/themes/dracula.zsh-theme
-else
-    echo "Couldn't find [$OH_MY_ZSH], go install https://github.com/robbyrussell/oh-my-zsh - sorry..."
+not_installed=()
+
+for package in "${packages[@]}"; do
+    yay -Qe | grep $package > /dev/null 2>&1
+    if [[ "$?" != "0" ]]; then
+        echo $package not installed.
+        not_installed+=($package)
+    fi
+done
+
+if [[ ${#not_installed[@]} -gt 0 ]]; then
+    yay -S ${not_installed[@]}
 fi
 
 # Setup plug

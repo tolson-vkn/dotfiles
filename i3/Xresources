@@ -1,0 +1,94 @@
+! Laptop
+! Xft.dpi: 260
+! 4K monitor
+! Xft.dpi: 135
+! Xft.dpi: 115
+! X1 Yoga
+Xft.dpi: 96
+
+! xrdb ~/.Xresources
+
+! xrandr --output eDP1 --auto # Turn on
+! xrandr --output eDP1-1 --off # Turn off
+
+! These might also be useful depending on your monitor and personal preference:
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!! special
+!*.foreground:   #e6d4a3
+!*.background:   #282828
+!*.cursorColor:  #e6d4a3
+!
+!! black
+!*.color0:       #1e1e1e
+!*.color8:       #7f7061
+!
+!! red
+!*.color1:       #be0f17
+!*.color9:       #f73028
+!
+!! green
+!*.color2:       #868715
+!*.color10:      #aab01e
+!
+!! yellow
+!*.color3:       #cc881a
+!*.color11:      #f7b125
+!
+!! blue
+!*.color4:       #377375
+!*.color12:      #719586
+!
+!! magenta
+!*.color5:       #a04b73
+!*.color13:      #c77089
+!
+!! cyan
+!*.color6:       #578e57
+!*.color14:      #7db669
+!
+!! white
+!*.color7:       #978771
+!*.color15:      #e6d4a3
+
+! special
+!*.foreground:   #2e2a29
+!*.background:   #faefbb
+!*.cursorColor:  #2e2a29
+!
+!! black
+!*.color0:       #faefbb
+!*.color8:       #7f7061
+!
+!! red
+!*.color1:       #be0f17
+!*.color9:       #890009
+!
+!! green
+!*.color2:       #868715
+!*.color10:      #66620d
+!
+!! yellow
+!*.color3:       #cc881a
+!*.color11:      #a56311
+!
+!! blue
+!*.color4:       #377375
+!*.color12:      #0e5365
+!
+!! magenta
+!*.color5:       #a04b73
+!*.color13:      #7b2b5e
+!
+!! cyan
+!*.color6:       #578e57
+!*.color14:      #356a46
+!
+!! white
+!*.color7:       #685c51
+!*.color15:      #2e2a29
