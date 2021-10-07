@@ -13,7 +13,7 @@ player = "spotify"
 
 [[block]]
 block = "github"
-format = "{author}|{comment}|{mention}|{review_requested}"
+format = "{author}|{review_requested}"
 
 [[block]]
 block = "disk_space"

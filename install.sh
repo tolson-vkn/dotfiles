@@ -46,6 +46,7 @@ fi
 # Packages
 packages=(
     'vim-youcompleteme-git'
+    'yq'
 )
 
 not_installed=()

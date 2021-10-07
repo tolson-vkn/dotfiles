@@ -9,6 +9,7 @@ packages=(
     # 'wired' # ope city
     'playerctl'
     'ttf-font-awesome'
+    'feh'
 )
 
 not_installed=()
@@ -66,8 +67,16 @@ format = "%a %d/%m %R"
 EOF
 fi
 
+###
+# i3
+### 
+cp i3/config i3/config-tmpled
+github_token=$(yq -r '.github_token' ../secret.yml)
+sed -i 's/{{github_token}}/'$github_token'/' i3/config-tmpled 
+
+
 mkdir -p $CONFIG_DIR/{i3,i3status-rust}
-cp i3/config $CONFIG_DIR/i3/config
+cp i3/config-tmpled $CONFIG_DIR/i3/config
 cp i3status-rust/config.toml-tmpled $CONFIG_DIR/i3status-rust/config.toml
 
 cp lock.sh $HOME/tin
